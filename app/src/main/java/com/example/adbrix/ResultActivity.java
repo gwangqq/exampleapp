@@ -16,11 +16,11 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Intent intent = getIntent();
-        String string = intent.getExtras().getString("search_string");
+        result = intent.getExtras().getString("search_string");
         testTextView = (TextView) findViewById(R.id.tv_test);
 
-        if (string != null) {
-            testTextView.setText(string);
+        if (result != null) {
+            testTextView.setText(result);
         } else {
             onNewIntent(ResultActivity.this.getIntent());
             testTextView.setText(result);
