@@ -31,17 +31,8 @@
         </activity>
         <meta-data android:name="AdBrixRmAppKey" android:value="nvg08XJm8E6CeuSCZtc4OA" />
         <meta-data android:name="AdBrixRmSecretKey" android:value="dJdmYpId1kivO1RkHvvnOw" />
-    </application>
-</manifest>
 
-<!--
-
-
-
-
-
-
-<service
+        <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
@@ -49,11 +40,6 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="com.igaworks.v2.core.push.notification.AbxPushReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.igaworks.v2.core.pushServiceImplement.CLIENT_PUSH_RECEIVE"/>
-            </intent-filter>
-        </receiver>-->
+    </application>
+
+</manifest>
