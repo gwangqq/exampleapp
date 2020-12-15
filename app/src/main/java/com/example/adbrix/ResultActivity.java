@@ -10,56 +10,14 @@ import android.widget.TextView;
 import com.igaworks.v2.core.AdBrixRm;
 public class ResultActivity extends AppCompatActivity {
     TextView testTextView;
-    String result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Intent intent = getIntent();
-        result = intent.getExtras().getString("search_string");
+        String result = intent.getExtras().getString("search_string");
         testTextView = (TextView) findViewById(R.id.tv_test);
-
-        if (result != null) {
-            testTextView.setText(result);
-        } else {
-            onNewIntent(ResultActivity.this.getIntent());
-            testTextView.setText(result);
-        }
-
-
-    }
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        //==========do something using intent============
-        Uri uri = Uri.parse(intent.getDataString());
-        result = uri.getQueryParameter("string");
-        Log.d("deeplink url ", "onNewIntent(Intent intent) :::" + result);
-        //===============================================
-        setIntent(intent);
-        AdBrixRm.deeplinkEvent(ResultActivity.this);
+        testTextView.setText(result);
     }
 }
-
-
-
-/*
-
-
-
-
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        // ============= do something using intent ===============
-        Uri uri = Uri.parse(intent.getDataString());
-        result = uri.getQueryParameter("string");
-        Log.d("example", "onNewIntent(Intent intent) ::: " + result);
-        // =======================================================
-        setIntent(intent);
-        AdBrixRm.deeplinkEvent(ResultActivity.this);
-    }
-
-*/
 
